@@ -4,7 +4,7 @@ package com.waterkemper.springsecurityjwt.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "role_access")
+@Table(name = "roles")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
