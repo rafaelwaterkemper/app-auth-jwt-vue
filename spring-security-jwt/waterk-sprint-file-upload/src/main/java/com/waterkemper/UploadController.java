@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.io.InputStream;
 
 @RestController
 @RequestMapping("/v1/api/")
@@ -23,6 +24,13 @@ public class UploadController {
     @PostMapping(value = "upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> upload(@RequestParam("file") MultipartFile multipartFile) throws IOException {
         String filename = storageFileService.save(multipartFile);
+
+        return ResponseEntity.ok("File saved: " + filename);
+    }
+
+    @PostMapping(value = "upload-octet-stream", consumes = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public ResponseEntity<String> upload(@RequestParam("filename") String filename, InputStream file) throws IOException {
+        storageFileService.save(filename, file);
 
         return ResponseEntity.ok("File saved: " + filename);
     }

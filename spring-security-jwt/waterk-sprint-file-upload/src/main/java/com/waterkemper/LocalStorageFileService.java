@@ -8,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -30,6 +31,12 @@ public class LocalStorageFileService implements StorageFile {
         } catch (Exception ex) {
             throw new FileStorageException("Could not create the directory where the uploaded files will be stored.", ex);
         }
+    }
+
+    public String save(String filename, InputStream inputStream) throws IOException {
+        Files.write(fileStorageLocation.resolve(filename), inputStream.readAllBytes());
+
+        return filename;
     }
 
     public String save(MultipartFile multipartFile) throws IOException {
