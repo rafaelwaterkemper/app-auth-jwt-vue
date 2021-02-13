@@ -13,8 +13,8 @@ import java.util.Objects;
 public class OrganogramaId implements Serializable {
 
     @ManyToOne
-    @NotNull
-    @JoinColumn(name = "i_config_organ", referencedColumnName = "i_config_organ")
+//    @NotNull
+    @JoinColumn(name = "i_config_organ", referencedColumnName = "i_config_organ", nullable = true)
 //    @Column(name = "i_config_organ")
     private ConfiguracaoOrganograma configuracaoOrganograma;
 
@@ -29,6 +29,10 @@ public class OrganogramaId implements Serializable {
 
     public String getiOrganogramas() {
         return iOrganogramas;
+    }
+
+    public void setConfiguracaoOrganograma(ConfiguracaoOrganograma configuracaoOrganograma) {
+        this.configuracaoOrganograma = configuracaoOrganograma;
     }
 
     @Override

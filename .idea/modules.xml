@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/app-auth-jwt-vue.iml" filepath="$PROJECT_DIR$/.idea/app-auth-jwt-vue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-security-jwt/spring-security-app/spring-security-app.iml" filepath="$PROJECT_DIR$/spring-security-jwt/spring-security-app/spring-security-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-security-jwt/spring-security-jwt.iml" filepath="$PROJECT_DIR$/spring-security-jwt/spring-security-jwt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-security-jwt/waterk-jwt-model/waterk-jwt-model.iml" filepath="$PROJECT_DIR$/spring-security-jwt/waterk-jwt-model/waterk-jwt-model.iml" />
+    </modules>
+  </component>
+</project>

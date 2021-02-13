@@ -3,6 +3,7 @@ package com.waterkemper.model;
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -30,6 +31,7 @@ public class Organograma {
     @Column(name = "tipo")
     private String tipo;
 
+    @Null
     @Version
     @Column(name = "AUD_VERSAO")
     private Integer version;
@@ -52,6 +54,26 @@ public class Organograma {
 
     public String getTipo() {
         return tipo;
+    }
+
+    public void setId(OrganogramaId id) {
+        this.id = id;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setNivel(Integer nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 
     public static final class Builder extends EntityBuilder<Organograma> {

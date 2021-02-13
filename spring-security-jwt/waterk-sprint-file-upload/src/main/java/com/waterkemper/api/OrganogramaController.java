@@ -26,7 +26,10 @@ public class OrganogramaController {
 
     @PostMapping("config-organograma")
     public ConfiguracaoOrganograma saveConfig(@RequestBody ConfiguracaoOrganograma configuracaoOrganograma) {
-        entityManager.persist(configuracaoOrganograma);
+        ConfiguracaoOrganograma configuracaoOrganograma1 = entityManager.find(ConfiguracaoOrganograma.class, configuracaoOrganograma.getId());
+        configuracaoOrganograma1.setDescricao(configuracaoOrganograma.getDescricao());
+        configuracaoOrganograma1.setVersion(configuracaoOrganograma.getVersion());
+        entityManager.persist(configuracaoOrganograma1);
         return configuracaoOrganograma;
     }
 

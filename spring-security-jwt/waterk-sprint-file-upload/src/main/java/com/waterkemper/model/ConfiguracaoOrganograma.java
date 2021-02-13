@@ -33,6 +33,14 @@ public class ConfiguracaoOrganograma {
         return descricao;
     }
 
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public static final class Builder extends EntityBuilder<ConfiguracaoOrganograma> {
 
         private Builder(ConfiguracaoOrganograma entity, EntityState state) {

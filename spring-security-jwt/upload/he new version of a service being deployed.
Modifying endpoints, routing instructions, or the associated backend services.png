@@ -1,0 +1,5 @@
+he new version of a service being deployed.
+Modifying endpoints, routing instructions, or the associated backend services.
+Changes to authentication and authorization services.
+Modification of nonfunctional requirements, such as rate-limiting, timeouts, retries patterns, and circuit-breaking.
+User testing of new functionality, f

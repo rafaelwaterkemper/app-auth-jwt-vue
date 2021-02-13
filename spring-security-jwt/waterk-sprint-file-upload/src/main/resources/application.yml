@@ -8,9 +8,13 @@ spring:
     url: jdbc:postgresql://localhost:5432/jwtdb
     username: postgres
     password: postgres
-    initialization-mode: always
+#    initialization-mode: always
   jpa:
+    persistenceUnit: 'PonPu'
     properties:
+      hibernate.dialect: org.hibernate.dialect.Oracle10gDialect
+      javax.persistence.validation.mode: none
+      hibernate.jdbc.lob.non_contextual_creation: true
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
