@@ -16,6 +16,9 @@ public class Pessoa {
     @Column(name = "nome")
     private String nome;
 
+    @OneToOne
+    private Cidade cidade;
+
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
@@ -28,6 +31,14 @@ public class Pessoa {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
 
     public String getNome() {

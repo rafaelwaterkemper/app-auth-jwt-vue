@@ -1,5 +1,6 @@
 package com.waterkemper.springsecurityjwt.api;
 
+import com.waterkemper.springsecurityjwt.api.dtos.PessoaDto;
 import com.waterkemper.springsecurityjwt.model.Pessoa;
 import com.waterkemper.springsecurityjwt.model.PessoaService;
 import com.waterkemper.springsecurityjwt.repositories.PessoaRepository;
@@ -28,14 +29,15 @@ public class PessoaController {
     @PostMapping
 //    @Transactional(propagation = Propagation.REQUIRED)
     public ResponseEntity<Pessoa> save(@RequestBody Pessoa pessoa) {
+
         Pessoa saved = pessoaService.save(pessoa);
-        Pessoa outra = pessoaService.save(pessoa);
+//        Pessoa outra = pessoaService.save(pessoa);
         return ResponseEntity.ok(saved);
     }
 
     @GetMapping
-    public ResponseEntity<List<Pessoa>> findAll() {
-        ResponseEntity<List<Pessoa>> ok = ResponseEntity.ok(pessoaService.findPessoas());
+    public ResponseEntity<List<PessoaDto>> findAll() {
+        ResponseEntity<List<PessoaDto>> ok = ResponseEntity.ok(pessoaService.findPessoas());
         return ok;
     }
 }

@@ -1,5 +1,6 @@
 package com.waterkemper.springsecurityjwt.model;
 
+import com.waterkemper.springsecurityjwt.api.dtos.PessoaDto;
 import com.waterkemper.springsecurityjwt.repositories.PessoaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -19,8 +20,9 @@ public class PessoaService {
     }
 
     @Transactional(isolation = Isolation.DEFAULT)
-    public List<Pessoa> findPessoas() {
+    public List<PessoaDto> findPessoas() {
         return StreamSupport.stream(repository.findAll().spliterator(), false)
+                .map(PessoaDto::toDto)
                 .collect(Collectors.toList());
     }
 
