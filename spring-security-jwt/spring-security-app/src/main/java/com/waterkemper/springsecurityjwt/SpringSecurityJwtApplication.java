@@ -3,11 +3,10 @@ package com.waterkemper.springsecurityjwt;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.jms.annotation.EnableJms;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 @EnableWebSecurity
-@EnableJms
+//@EnableJms
 @SpringBootApplication
 @EntityScan("com.waterkemper")
 public class SpringSecurityJwtApplication {
